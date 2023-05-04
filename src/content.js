@@ -31,20 +31,22 @@ function charGenerator(box) {
 }
 //charGenerator(square);
 
-
+// this is sent for my computer set i to like 500 but we could make this a slider
 function boxGenerator() {
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 1500; i++) {
         let square = document.createElement('div');
         square.setAttribute('class', 'rain');
         // square.style.backgroundColor = 'yellow'
-        square.style.zIndex = '15';
+        square.style.zIndex = '-1';
         square.style.position = 'absolute'
         square.style.top = '0px'
         square.style.left = `${Math.floor(Math.random() * window.innerWidth)}px`;
         square.style.color = randomChar(background);
-        square.style.animationDelay = `${Math.random() * -20}s`
+        square.style.animationDelay = `${Math.random() * -40}s`
+        square.style.animationDuration = `${Math.random() * 5}s`
         square.style.opacity = 1;
         square.style.fontSize = '50px';
+        square.style.opacity = Math.random() * 0.8 + .2;
         charGenerator(square);
         document.querySelector('body').appendChild(square);
     }

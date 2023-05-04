@@ -1,5 +1,5 @@
 .rain{
-    font-family: "Matrix Code NFI";
+    font-family: "Matrix Code NFI", "MatrixCodeFont";
     font-size: '100px';
     animation: animate 5s linear infinite;
 }
