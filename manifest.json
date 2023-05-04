@@ -10,5 +10,13 @@
       "permissions": ["activeTab", "scripting"],
       "background": {
         "service_worker": "src/index.js"
-      }
+      },
+      "content_scripts": [{
+          "matches": [
+            "http://*/*"
+          ],
+          "css": ["src/style.css"],
+          "js": ["src/content.js"]
+        }
+      ]
 }

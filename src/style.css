@@ -1,0 +1,26 @@
+.rain{
+    font-family: "Matrix Code NFI";
+    font-size: '100px';
+    animation: animate 5s linear infinite;
+}
+.text{
+    font-family: "Matrix Code NFI";
+    font-size: '100px';
+}
+@keyframes animate {
+    0% {
+        transform: translateY(-120px);
+    }
+    100% {
+        transform: translateY(calc(100vh + 120px));
+    }
+}
+@font-face {
+    font-family: "Matrix Code NFI"; 
+        src: url("//db.onlinewebfonts.com/t/ff2a407fe06752facf8828a86955e988.eot"); 
+        src: url("//db.onlinewebfonts.com/t/ff2a407fe06752facf8828a86955e988.eot?#iefix") format("embedded-opentype"),
+             url("//db.onlinewebfonts.com/t/ff2a407fe06752facf8828a86955e988.woff2") format("woff2"),
+            url("//db.onlinewebfonts.com/t/ff2a407fe06752facf8828a86955e988.woff") format("woff"), 
+            url("//db.onlinewebfonts.com/t/ff2a407fe06752facf8828a86955e988.ttf") format("truetype"), 
+            url("//db.onlinewebfonts.com/t/ff2a407fe06752facf8828a86955e988.svg#Matrix Code NFI") format("svg"); 
+    }

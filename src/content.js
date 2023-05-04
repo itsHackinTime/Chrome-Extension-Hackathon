@@ -1,16 +1,73 @@
 
 console.log('hello there');
-let square = document.createElement('div');
-square.style.backgroundColor = 'blue'
-square.style.zIndex = '15';
-square.style.height = '100rem'
-square.style.width = '100rem'
-square.style.position = 'absolute'
-square.style.top = '0px'
-square.style.left = '0px'
-square.style.opacity= .5;
-square.innerText = 'oiuwyerjhdsf'
-square.style.fontFamily = 'Verdana'
-square.style.color = 'green'
-square.style.fontSize = '50px'
-document.querySelector('body').appendChild(square);
+const charLib = ['0', '9', '8', '7', '6', '5', '4', '3', '2', '1', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '~', '-', '#', '$', '%', '^', '&', '*', '(', ')', '[', ',]', '{', '}', ':', '<', '>']
+
+const background = ["rgb(117,251,98)", "rgb(63,140,44)","rgb(0,255,65)", "limegreen", ]
+
+//r:117 g:251 b:98
+//r:63 g:140 b:44
+//r:21 g:58 b:12
+
+function randomChar(array) {
+    const random = Math.floor(Math.random() * array.length);
+    return array[random]
+}
+function randomLength() {
+    return Math.floor(Math.random() * 14) + 2;
+}
+function randominrange(length) {
+    return Math.floor(Math.random() * length);
+}
+
+
+// creates 
+function charGenerator(box) {
+    for (let i = 0; i < randomLength(); i++) {
+        let str = document.createElement('div');
+        str.setAttribute('class', 'text');
+        str.innerText = randomChar(charLib);
+        box.appendChild(str);
+    }
+}
+//charGenerator(square);
+
+
+function boxGenerator() {
+    for (let i = 0; i < 200; i++) {
+        let square = document.createElement('div');
+        square.setAttribute('class', 'rain');
+        // square.style.backgroundColor = 'yellow'
+        square.style.zIndex = '15';
+        square.style.position = 'absolute'
+        square.style.top = '0px'
+        square.style.left = `${Math.floor(Math.random() * window.innerWidth)}px`;
+        square.style.color = randomChar(background);
+        square.style.animationDelay = `${Math.random() * -20}s`
+        square.style.opacity = 1;
+        square.style.fontSize = '50px';
+        charGenerator(square);
+        document.querySelector('body').appendChild(square);
+    }
+}
+
+// function move(box) {
+//     console.log('im moving!')
+//     let yPosition = Number(box.style.top.replace('px', ''))
+//     box.style.top = `${yPosition += 500}px`
+//     //if(yPosition > 1000)box.remove();
+//     }
+
+
+// const throttle = (func, wait) => {
+//     let lastInvoked = 0;
+//     return () => {
+//         const time = Date.now();
+//         if (time - lastInvoked > wait) {
+//             lastInvoked = time;
+//             func();
+//         }
+//     }
+// };
+
+
+boxGenerator();
