@@ -10,7 +10,7 @@ square.style.top = '0px'
 square.style.left = '0px'
 square.style.opacity= .5;
 square.innerText = 'oiuwyerjhdsf'
-square.style.fontFamily = 'matrix font'
+square.style.fontFamily = 'Verdana'
 square.style.color = 'green'
 square.style.fontSize = '50px'
 document.querySelector('body').appendChild(square);
